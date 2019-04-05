@@ -27,7 +27,7 @@ exports.findAll = function(req, res) {
     });
 };
 
-exports.findOne = function(req, res) {
+exports.find = function(req, res) {
 
     var fs = require('fs');
 
@@ -40,6 +40,7 @@ exports.findOne = function(req, res) {
         var atendimentoFiltrado = json['atendimentos'].filter(function (a) {
             a.day = new Date(a.day.split('-').reverse().join('-')) || {};
             if (a.day >= startDate && a.day <= endDate) {
+              a.day = (a.day.getDate()+1)+'-'+(a.day.getMonth()+1)+'-'+a.day.getFullYear();
               return a;
             }
           });

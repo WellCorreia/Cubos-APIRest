@@ -9,7 +9,7 @@ module.exports = function(app) {
     app.get('/api/atendimentos', atendimentos.findAll);
 
     // Consulta por datas
-    app.get('/api/atendimentos/:firstDate/:lastDate', atendimentos.findOne);
+    app.get('/api/atendimentos/:firstDate/:lastDate', atendimentos.find);
 
     // Deleta por Data
     app.delete('/api/atendimentos/:date', atendimentos.delete);
