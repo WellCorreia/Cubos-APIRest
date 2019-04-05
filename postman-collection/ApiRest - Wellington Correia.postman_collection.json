@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "4d589dde-1667-40b2-be48-0d84490254ab",
+		"name": "ApiRest - Wellington Correia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/api/atendimentos/diario/20",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"day\": \"02-10-2019\",\n    \"intervals\": [\n        {\n            \"start\": \"12:40\",\n            \"end\": \"13:00\"\n        },\n        {\n            \"start\": \"14:40\",\n            \"end\": \"15:00\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/atendimentos/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"atendimentos",
+						""
+					]
+				},
+				"description": "Esse endpoint representa a inserção de um json consecutivamente alterando apenas as datas."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/atendimentos/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"day\": \"02-10-2019\",\n    \"intervals\": [\n        {\n            \"start\": \"12:40\",\n            \"end\": \"13:00\"\n        },\n        {\n            \"start\": \"14:40\",\n            \"end\": \"15:00\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/atendimentos/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"atendimentos",
+						""
+					]
+				},
+				"description": "Esse endpoint é referênte a criação de horário por dia específico."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/atendimentos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"day\": \"02-10-2019\",\n    \"intervals\": [\n        {\n            \"start\": \"12:40\",\n            \"end\": \"13:00\"\n        },\n        {\n            \"start\": \"14:40\",\n            \"end\": \"15:00\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/atendimentos",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"atendimentos"
+					]
+				},
+				"description": "Essa endpoint faz as requisições de todos os horários cadastrados."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/atendimentos/semanal",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"day\": \"02-10-2019\",\n    \"intervals\": [\n        {\n            \"start\": \"12:40\",\n            \"end\": \"13:00\"\n        },\n        {\n            \"start\": \"14:40\",\n            \"end\": \"15:00\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/atendimentos/semanal",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"atendimentos",
+						"semanal"
+					]
+				},
+				"description": "Esse endpoint cadastra a partir da data enviada no json, verifica a data e cadastra os demais até formar uma semana."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/atendimentos/03-10-2019",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"day\": \"02-10-2019\",\n    \"intervals\": [\n        {\n            \"start\": \"12:40\",\n            \"end\": \"13:00\"\n        },\n        {\n            \"start\": \"14:40\",\n            \"end\": \"15:00\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/atendimentos/03-10-2019",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"atendimentos",
+						"03-10-2019"
+					]
+				},
+				"description": "Esse EndPoint deleta um registro que possua a data informada."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/atendimentos/03-10-2019/06-10-2019",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"day\": \"02-10-2019\",\n    \"intervals\": [\n        {\n            \"start\": \"12:40\",\n            \"end\": \"13:00\"\n        },\n        {\n            \"start\": \"14:40\",\n            \"end\": \"15:00\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/atendimentos/03-10-2019/06-10-2019",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"atendimentos",
+						"03-10-2019",
+						"06-10-2019"
+					]
+				},
+				"description": "Esse EndPoint busca todos os atendimentos cadastrado que fiquem entre as datas informadas"
+			},
+			"response": []
+		}
+	]
+}
