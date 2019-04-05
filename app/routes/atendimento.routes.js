@@ -9,7 +9,7 @@ module.exports = function(app) {
     app.get('/api/atendimentos', atendimentos.findAll);
 
     // Retrieve a single Atendimento by Id
-    app.get('/api/atendimentos/:id', atendimentos.findOne);
+    app.get('/api/atendimentos/:firstDate/:lastDate', atendimentos.findOne);
 
     // Delete a Atendimento with Id
     app.delete('/api/atendimentos/:id', atendimentos.delete);
