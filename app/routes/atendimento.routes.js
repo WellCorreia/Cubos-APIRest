@@ -2,15 +2,15 @@ module.exports = function(app) {
 
     var atendimentos = require('../controllers/atendimento.controller.js');
 
-    // Create a new Atendimento
+    // Cria um novo Atendimento
     app.post('/api/atendimentos', atendimentos.create);
 
-    // Retrieve all Atendimento
+    // Retorna todos os Atendimento
     app.get('/api/atendimentos', atendimentos.findAll);
 
-    // Retrieve a single Atendimento by Id
+    // Consulta por datas
     app.get('/api/atendimentos/:firstDate/:lastDate', atendimentos.findOne);
 
-    // Delete a Atendimento with Id
-    app.delete('/api/atendimentos/:id', atendimentos.delete);
+    // Deleta por Data
+    app.delete('/api/atendimentos/:date', atendimentos.delete);
 }

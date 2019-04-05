@@ -1,65 +1,4 @@
 
-var atendimentos = {
-        atendimentos: [
-					{
-					id: 1,
-					day: "02-10-2019",
-					intervals: [
-					    {
-					        start: "12:40",
-					        end: "13:00"
-					    },
-					    {
-					        start: "14:40",
-					        end: "15:00"
-					    }
-					]
-        },
-        {
-					id: 3,
-					day: "04-10-2019",
-					intervals: [
-							{
-									start: "12:40",
-									end: "13:00"
-							},
-							{
-									start: "14:40",
-									end: "15:00"
-							}
-					]
-        },
-        {
-					id: 5,
-					day: "06-10-2019",
-					intervals: [
-							{
-									start: "12:40",
-									end: "13:00"
-							},
-							{
-									start: "14:40",
-									end: "15:00"
-							}
-					]
-        },
-        {
-					id: 7,
-					day: "08-10-2019",
-					intervals: [
-							{
-									start: "12:40",
-									end: "13:00"
-							},
-							{
-									start: "14:40",
-									end: "15:00"
-							}
-					]
-        }
-			]
-		}
-
 exports.create = function(req, res) {
     var newAtendimento = req.body;
 		var json = [];
@@ -100,7 +39,6 @@ exports.findOne = function(req, res) {
 
         var atendimentoFiltrado = json['atendimentos'].filter(function (a) {
             a.day = new Date(a.day.split('-').reverse().join('-')) || {};
-            //console.log(a.day);
             if (a.day >= startDate && a.day <= endDate) {
               return a;
             }
@@ -110,8 +48,16 @@ exports.findOne = function(req, res) {
 };
 
 exports.delete = function(req, res) {
-  var deleteAtendimento = atendimentos["atendimento" + req.params.id];
-    delete atendimentos["atendimento" + req.params.id];
-    console.log("--->After deletion, atendimento list:\n" + JSON.stringify(atendimentos, null, 4) );
-    res.end( "Deleted atendimento: \n" + JSON.stringify(deleteAtendimento, null, 4));
+
+  var fs = require('fs');
+  var newAtendimentos = [];
+  fs.readFile('db.json', function (err, data, bytes) {
+    var json = JSON.parse(data);
+    console.log(json);
+    newAtendimentos = {
+      atendimentos: json['atendimentos'].filter(function (a) {if (a.day != req.params.date) {return a;}})
+    }
+  	fs.writeFile("db.json", JSON.stringify(newAtendimentos, null, 4));
+  });
+
 };
