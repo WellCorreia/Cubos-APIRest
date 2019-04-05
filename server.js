@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json())
  
-require('./app/routes/customer.routes.js')(app);
+require('./app/routes/atendimento.routes.js')(app);
 
 
 var server = app.listen(3000, () => {
@@ -11,7 +11,7 @@ var server = app.listen(3000, () => {
 });
 
 
-//var customers = require('../controllers/customer.controller.js')
+//var atendimentos = require('../controllers/atendimento.controller.js')
 
 //
 //app.get("/getAll", (req, res, next) => {

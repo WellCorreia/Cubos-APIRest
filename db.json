@@ -1,1 +1,32 @@
-{"customer1":{"firstname":"Jack","lastname":"Davis","age":25,"id":1},"customer2":{"firstname":"Mary","lastname":"Taylor","age":37,"id":2},"customer3":{"firstname":"Peter","lastname":"Thomas","age":17,"id":3},"customer4":{"firstname":"Peter","lastname":"Thomas","age":17,"id":4},"customer24":{"fistname":"Well","lastname":"Correia","age":24,"id":24}}
+{
+    "atendimentos": [
+        {
+            "id": 9,
+            "day": "02-10-2019",
+            "intervals": [
+                {
+                    "start": "12:40",
+                    "end": "13:00"
+                },
+                {
+                    "start": "14:40",
+                    "end": "15:00"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "day": "02-10-2019",
+            "intervals": [
+                {
+                    "start": "12:40",
+                    "end": "13:00"
+                },
+                {
+                    "start": "14:40",
+                    "end": "15:00"
+                }
+            ]
+        }
+    ]
+}
